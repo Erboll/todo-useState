@@ -5,6 +5,7 @@ import AddTodo from "./pages/AddTodo";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { Task } from "./types";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </div>
   );
