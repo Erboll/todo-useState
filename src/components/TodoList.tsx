@@ -28,7 +28,6 @@ const TodoList: React.FC<Props> = ({ removeBtn, task, toggle }) => {
           >
             X
           </button>
-          <button>Git Git</button>
         </li>
       </ul>
     </div>
