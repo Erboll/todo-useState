@@ -12,7 +12,7 @@ const TodoList: React.FC<Props> = ({ removeBtn, task, toggle }) => {
     <div>
       <ul>
         <li
-          className=" flex border border-black-400 p-2 mb-4 w-3/4 rounded-md mt-6 m-auto tracking-widest text-gray-500 md:text-lg dark:text-gray-400"
+          className=" flex border border-black-400 p-2 mb-4 w-3/5 rounded-md mt-6 m-auto tracking-widest text-gray-500 md:text-lg dark:text-gray-400"
           key={task.id}
         >
           {task.task}
