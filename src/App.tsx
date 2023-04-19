@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AddTodo from "./pages/AddTodo";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/LoginPage";
 import { Task } from "./types";
 import RegisterPage from "./pages/RegisterPage";
 
