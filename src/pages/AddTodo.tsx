@@ -1,13 +1,12 @@
-import FormTodo from "../components/FormTodo";
-interface Props {
-  onSubmit: (e: React.FormEvent) => void;
-  textTodo: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-const AddTodo = ({ onSubmit, textTodo, onChange }: Props) => {
+import React from "react";
+import NavBar from "../components/NavBar";
+import FormAddTodo from "../components/FormAddTodo";
+
+const AddTodo = () => {
   return (
     <div>
-      <FormTodo onSubmit={onSubmit} textTodo={textTodo} onChange={onChange} />
+      <NavBar />
+      <FormAddTodo />
     </div>
   );
 };

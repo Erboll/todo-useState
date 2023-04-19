@@ -3,16 +3,31 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="bg-purple-400 w-100% h-auto text-right pr-5 pt-5 pb-5">
-      <Link to={"/"} className="font-bold text-indigo-900  pr-6">
-        Home
-      </Link>
-      <Link to={"/add-todo"} className="font-bold text-indigo-900 pr-6 ">
-        Add task
-      </Link>{" "}
-      <Link to={"/login"} className="font-bold text-indigo-900  pr-6">
-        Login
-      </Link>
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-sky-500 mb-3">
+      <div className="container px-4 mx-auto flex items-center justify-between pr-60">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <Link
+            to={"/"}
+            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+          >
+            Todo Auth
+          </Link>
+        </div>
+        <div className="flex flex-wrap">
+          <Link
+            to={"/"}
+            className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          >
+            Home
+          </Link>
+          <Link
+            to={"/add-todo"}
+            className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+          >
+            Add task
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 };

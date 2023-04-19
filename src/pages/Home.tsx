@@ -1,18 +1,26 @@
-import TodoList from "../components/TodoList";
-import { Task } from "../types";
-interface Props {
-  tasks: Task[];
-  removeBtn: (id: number) => void;
-  toggle: (id: number) => void;
-}
+import { RiUserReceivedFill } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import { useAuth } from "../hooks/use-auth";
+import { removeUser } from "../store/slices/userSlice";
 
-const Home = ({ tasks, removeBtn, toggle }: Props) => {
-  return (
+const Home = () => {
+  const dispatch = useDispatch();
+  const { isAuth, email } = useAuth();
+
+  return isAuth ? (
     <div>
-      {tasks.map((t) => (
-        <TodoList key={t.id} task={t} removeBtn={removeBtn} toggle={toggle} />
-      ))}
+      <NavBar />
+      <button
+        className="absolute top-4 right-6 text-xs pt-1.5 text-white flex items-center justify-between"
+        onClick={() => dispatch(removeUser())}
+      >
+        <RiUserReceivedFill /> <span className="pl-2 ">{email}</span>
+      </button>
     </div>
+  ) : (
+    <Navigate to={"/login"} />
   );
 };
 
