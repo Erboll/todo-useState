@@ -1,25 +1,31 @@
-import React, { FormEvent, useState } from "react";
-import { Task } from "../types";
+import { ChangeEvent, FormEvent } from "react";
+interface Props {
+  onSubmit: (e: FormEvent) => void;
+  textTask: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
 
-const FormAddTodo = () => {
-  const [textTask, setTextTask] = useState("");
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setTasks([...tasks, { id: Date.now(), completed: false, task: textTask }]);
-    console.log(tasks);
-  };
-
+const FormAddTodo = ({ onSubmit, textTask, onChange }: Props) => {
   return (
     <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        value={textTask}
-        className="border border-gray-800"
-        onChange={(e) => setTextTask(e.target.value)}
-      />
-      <button type="submit">Add</button>
+      <div className="m-auto w-96">
+        <label>
+          {" "}
+          Add todo :
+          <input
+            type="text"
+            value={textTask}
+            className="border ml-2 border-gray-400 rounded-sm p-1"
+            onChange={onChange}
+          />
+        </label>
+        <button
+          className="bg-blue-500 ml-5 hover:bg-blue-700 text-white py-1.5 px-2 rounded text-sm font-light"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
     </form>
   );
 };
